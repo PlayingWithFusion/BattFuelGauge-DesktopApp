@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>BFG Live Data</title>
+   <link rel="stylesheet" href="style.css">
+   <link rel="shortcut icon" href="favicon.png">
+   <script src="jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+   <div class="document">
+      <div class="header">
+         <image src="logo_white.svg" width="225" height="77" style="float:left;">
+            <h1>BFG Dashboard</h1>
+            <p>Live data and configuration</p>
+      </div>
+
+      <div class="content">
+         <p><a href="index.html">All Devices</a> &gt; BGF Dashboard</p>
+         <p>View live data and modify BFG settings<button class="edit-button" id="more-settings-btn" style="float: right;">More Settings</button><button class="share-button" id="post-data-btn" style="float: right;">Post Data</button></p>
+
+         <div class="meta-container">
+            <div class="meta-item">
+               <span class="meta-label">Battery Nickname<button class="edit-button"
+                     id="set-nickname">Edit</button></span>
+               <span class="meta-value" id="nickname">---</span>
+            </div>
+            <div class="meta-item">
+               <span class="meta-label">BFG Serial Number</span>
+               <span class="meta-value" id="bfg-serial">---</span>
+            </div>
+            <div class="meta-item">
+               <span class="meta-label">Battery Manufacturer<button class="edit-button"
+                     id="set-batt-mfg-btn">Edit</button></span>
+               <span class="meta-value" id="batt-mfg">----</span>
+            </div>
+            <div class="meta-item">
+               <span class="meta-label">Capacity / Rated Capacity</span>
+               <span class="meta-value"><span id="batt-capacity">---</span> / <span
+                     id="batt-rated-capacity">---</span> <small>Ah</small></span>
+            </div>
+
+            <div class="meta-item">
+               <span class="meta-label">Battery Age</span>
+               <span class="meta-value"><span id="bat-age">---</span> <small>Days</small></span>
+            </div>
+            <div class="meta-item">
+               <span class="meta-label">Charge/Discharge Cycles</span>
+               <span class="meta-value" id="bat-num-cycles">--- <small>cycles</small></span>
+            </div>
+            <div class="meta-item more-settings" style="display: none;">
+               <span class="meta-label">Calibration<button class="edit-button"
+                     id="set-calibration-btn">Edit</button></span>
+               <span class="meta-value"><span id="cal-offset">---</span> <small>Offset</small></span>
+               <span class="meta-value"><span id="cal-gain">---</span> <small>Gain</small></span>
+               <span class="meta-value"><small><button class="edit-button"
+                     id="cal-offset-btn">Learn Open-Circuit Offset</button></small></span>
+               <span class="meta-value"><small><button class="edit-button"
+                     id="cal-gain-btn">Learn 10A Load</button></small></span>
+            </div>
+            <div class="meta-item more-settings" style="display: none;">
+               <span class="meta-label">Display Orientation</span>
+               <span class="meta-value"><small><button class="edit-button"
+                     id="set-disp-normal-btn">Normal</button></small></span>
+               <span class="meta-value"><small><button class="edit-button"
+                     id="set-disp-inverted-btn">Flipped / Inverted</button></small></span>
+            </div>
+            <div class="meta-item more-settings" style="display: none;">
+               <span class="meta-label">Advanced</span>
+               <span class="meta-value"><small><button class="edit-button"
+                     id="set-age-btn">Edit Battery Age/Capacity</button></small></span>
+               <span class="meta-value"></span><small><button class="edit-button"
+                     id="reset-bfg-btn">Reset BFG (New Battery)</button></small></span>
+            </div>
+            <div class="meta-item">
+               <span class="meta-label">Firmware version</span>
+               <span class="meta-value" id="bfg-firmware">---</span>
+            </div>
+         </div>
+
+         <div class="param-group">
+            <h2>Live Data</h2>
+            <div class="grid">
+               <div class="data-card">
+                  <span class="label">Voltage</span>
+                  <span class="value"><span id="voltage">---</span> <small>V</small></span>
+               </div>
+               <div class="data-card">
+                  <span class="label">Current</span>
+                  <span class="value"><span id="current">---</span> <small>A</small></span>
+               </div>
+               <div class="data-card">
+                  <span class="label">State</span>
+                  <span class="value" id="bfg-state">---</span>
+               </div>
+               <div class="data-card">
+                  <span class="label">Depth of Discharge</span>
+                  <span class="value"><span id="dod-ah">---</span> <small>Ah</small></span>
+                  <span class="value"><span id="dod-wh">---</span> <small>Wh</small></span>
+               </div>
+               <div class="data-card">
+                  <span class="label">State of Charge</span>
+                  <span class="value"><span id="soc-ah">---</span> <small>Ah</small></span>
+                  <span class="value"><span id="soc-pct">---</span> <small>%</small></span>
+               </div>
+               <div class="data-card">
+                  <span class="label">Effective Capacity</span>
+                  <span class="value"><span id="effective-cap-ah">---</span> <small>Ah</small></span>
+                  <span class="value"><span id="effective-cap-pct">---</span> <small>%</small></span>
+               </div>
+            </div>
+            <p id="status-msg">Initializing...</p>
+         </div>
+
+
+         <div class="param-group">
+            <h2>Current Cycle</h2>
+            <div class="grid">
+               <div class="data-card">
+                  <span class="label">Min / Max Voltage</span>
+                  <span class="value"><span id="cycle-min-v">---</span> <small>V</small></span>
+                  <span class="value"><span id="cycle-max-v">---</span> <small>V</small></span>
+               </div>
+               <div class="data-card">
+                  <span class="label">Min / Max Current</span>
+                  <span class="value"><span id="cycle-min-i">---</span> <small>A</small></span>
+                  <span class="value"><span id="cycle-max-i">---</span> <small>A</small></span>
+               </div>
+               <div class="data-card"><span class="label">Starting Voltage</span><span class="value"><span
+                        id="cycle-starting-v">---</span> <small>V</small></span></div>
+               <div class="data-card"><span class="label">RMS Discharge Current</span><span class="value"><span
+                        id="cycle-rms-i">---</span> <small>A</small></span></div>
+               <div class="data-card">
+                  <span class="label">Min Depth of Discharge</span>
+                  <span class="value"><span id="cycle-min-dod-ah">---</span> <small>Ah</small></span>
+                  <span class="value"><span id="cycle-min-dod-wh">---</span> <small>Wh</small></span>
+               </div>
+               <div class="data-card">
+                  <span class="label">Max Depth of Discharge</span>
+                  <span class="value"><span id="cycle-max-dod-ah">---</span> <small>Ah</small></span>
+                  <span class="value"><span id="cycle-max-dod-wh">---</span> <small>Wh</small></span>
+               </div>
+               <div class="data-card"><span class="label">Total Charge Time</span><span class="value"
+                     id="cycle-charge-time">---</span></div>
+               <div class="data-card"><span class="label">Total Discharge Time</span><span class="value"
+                     id="cycle-discharge-time">---</span></div>
+            </div>
+         </div>
+
+         <div class="param-group">
+            <h2>Last Robot Match</h2>
+            <div class="grid">
+               <div class="data-card">
+                  <span class="label">Min / Max Voltage</span>
+                  <span class="value"><span id="match-min-v">---</span> <small>V</small></span>
+                  <span class="value"><span id="match-max-v">---</span> <small>V</small></span>
+               </div>
+               <div class="data-card">
+                  <span class="label">Min / Max Current</span>
+                  <span class="value"><span id="match-min-i">---</span> <small>A</small></span>
+                  <span class="value"><span id="match-max-i">---</span> <small>A</small></span>
+               </div>
+               <div class="data-card"><span class="label">Starting Voltage</span><span class="value"><span
+                        id="match-starting-v">---</span> <small>V</small></span></div>
+               <div class="data-card"><span class="label">RMS Discharge Current</span><span class="value"><span
+                        id="match-rms-i">---</span> <small>A</small></span></div>
+               <div class="data-card">
+                  <span class="label">Min Depth of Discharge</span>
+                  <span class="value"><span id="match-min-dod-ah">---</span> <small>Ah</small></span>
+               </div>
+               <div class="data-card">
+                  <span class="label">Max Depth of Discharge</span>
+                  <span class="value"><span id="match-max-dod-ah">---</span> <small>Ah</small></span>
+               </div>
+               <div class="data-card"><span class="label">Total Charge Time</span><span class="value"
+                     id="match-charge-time">---</span></div>
+               <div class="data-card"><span class="label">Total Discharge Time</span><span class="value"
+                     id="match-discharge-time">---</span></div>
+               <div class="data-card"><span class="label">Active Time</span><span class="value"
+                     id="match-active-time">---</span></div>
+               <div class="data-card">
+                  <span class="label">Starting Depth of Discharge</span>
+                  <span class="value"><span id="match-start-dod-ah">---</span> <small>Ah</small></span>
+                  <span class="value"><span id="match-start-dod-wh">---</span> <small>Wh</small></span>
+               </div>
+               <div class="data-card">
+                  <span class="label">Ending Depth of Discharge</span>
+                  <span class="value"><span id="match-end-dod-ah">---</span> <small>Ah</small></span>
+                  <span class="value"><span id="match-end-dod-wh">---</span> <small>Wh</small></span>
+               </div>
+            </div>
+         </div>
+
+      </div>
+   </div>
+
+
+   <dialog id="set-nickname-dialog">
+      <h2>Set Nickname</h2>
+      <p>Specify the battery nickname used to identify this battery on this page as well as the BFG OLED display.  Names must be 11 characters or less</p>
+      <label for="tb-nickname">Nickname:</label>
+      <input type="text" id="tb-nickname">
+
+      <footer>
+         <button id="save-nickname-btn">Save</button>
+         <button id="cancel-nickname-btn">Cancel</button>
+      </footer>
+   </dialog>
+
+   <dialog id="set-mfg-dialog">
+      <h2>Select battery manufacturer</h2>
+      <p>The battery manufacturer is used by the BFG to improve the batery health and state of charge estimates.</p>
+      <label for="cb-manufacturer">Manufacturer:</label>
+      <select id="cb-manufacturer">
+         <option value="0">Duracell</option>
+         <option value="1">Energizer</option>
+         <option value="2">Interstate</option>
+         <option value="3">Mighty Max</option>
+         <option value="4">MK Powered</option>
+         <option value="5">Power-Sonic</option>
+      </select>
+
+      <footer>
+         <button id="save-mfg-btn">Save</button>
+         <button id="cancel-mfg-btn">Cancel</button>
+      </footer>
+   </dialog>
+
+   <dialog id="set-calibration-dialog">
+      <h2>Set Calibration values</h2>
+      <p>Manually specify BFG calibration values.  Advanced users only.  These values generally should only be modified after contacting Playing With Fusion <a href="mailto:technicalsupport@playingwithfusion.com">Technical Support</a></p>
+      <label for="tb-cal-offset">Current Offset:</label>
+      <input type="text" id="tb-cal-offset"><br/>
+      <label for="tb-cal-gain">Current Gain:</label>
+      <input type="text" id="tb-cal-gain">
+
+      <footer>
+         <button id="save-cal-btn">Save</button>
+         <button id="cancel-cal-btn">Cancel</button>
+      </footer>
+   </dialog>
+
+   <dialog id="set-battery-age-dialog">
+      <h2>Modify Battery Age and Capacity</h2>
+      <p>Manually modify the battery age, capacity, and number of charge/discharge cycles.  This can be necessary when installing the BFG onto a used battery.</p>
+      <label for="tb-rated-capacity">Battery Capacity (Ah):</label>
+      <input type="text" id="tb-batt-capacity"><br/>
+
+      <label for="tb-batt-age">Battery Age (days):</label>
+      <input type="text" id="tb-batt-age"><br/>
+
+      <label for="tb-batt-num-cycles">Number Cycles:</label>
+      <input type="text" id="tb-batt-num-cycles">
+
+      <footer>
+         <button id="save-age-btn">Save</button>
+         <button id="cancel-age-btn">Cancel</button>
+      </footer>
+   </dialog>
+
+   <dialog id="reset-bfg-dialog">
+      <h2>Reset BFG (New Battery)</h2>
+      <p>Reset all battery statistics and battery capacity information in the BFG.</p>
+      <p>This should only be done when moving a BFG to a new battery.   
+         This operation cannot be undone.   Once the BFG is reset, the battery capacity will be changed to the full design capacity for the selected manufacturer.</p>
+      <p>Type "BOMBSAWAY" in the text box below if you wish to proceed</p>
+      <label for="tb-reset-password">Password:</label>
+      <input type="text" id="tb-reset-password">
+
+      <footer>
+         <button id="save-reset-bfg-btn">Reset all Statistics</button>
+         <button id="cancel-reset-bfg-btn">Cancel</button>
+      </footer>
+   </dialog>
+
+   <dialog id="post-data-dialog" style="max-width: 600px;">
+      <h2>Download BFG Data or Post to the Cloud</h2>
+      <p>Download all battery statistics to a local JSON file or post that data to Playing With Fusion (Internet connection required).</p>
+      <p>This collection may also include potentially personally identifiable information such as your team number, 
+         match number, event name, and submission timestamp. PWF reserves the right to make this data publicly available 
+         in the future (for example, through leaderboards, datasets, or analysis tools). Optionally, you may provide an 
+         email address, which will only be used for promotional purposes—such as notifying winners of the Random Robot 
+         Statistics Competition—and will never be sold, rented, or shared publicly.</p>
+
+      <label for="tb-post-data-email">Email (Optional):</label>
+      <input type="text" id="tb-post-data-email"><br/>
+
+      <label for="tb-post-data-team-number">Team Number (Optional):</label>
+      <input type="text" id="tb-post-data-team-number"><br/>
+
+      <label for="tb-post-data-match-number">Match Number (Optional):</label>
+      <input type="text" id="tb-post-data-match-number"><br/>
+
+      <label for="tb-post-data-match-date">Match Date (Optional):</label>
+      <input type="date" id="tb-post-data-match-date"><br/>
+
+      <label for="tb-post-data-event-code">Event Code/Name (Optional):</label>
+      <input type="text" id="tb-post-data-event-code"><br/>
+
+      <footer>
+         <button id="save-local-bfg-data-btn">Save Local</button>
+         <button id="submit-bfg-data-btn">Submit (Internet)</button>
+         <button id="cancel-bfg-data-btn">Cancel</button>
+      </footer>
+   </dialog>
+
+   <dialog id="result-dialog" style="top:200px">
+      <h2 id="result-dialog-title"></h2>
+      <div id="result-dialog-text"></div>
+
+      <footer>
+         <button id="result-ok-btn">Ok</button>
+      </footer>
+   </dialog>
+
+   <a id="hidden-download-link" style="display:none"></a>
+
+   <script>
+      let batteryManufacturerId = 0;
+      let lastBfgResponse = "";
+      let teamNumber = 0;
+      let matchNumber = 0;
+      let eventName = "";
+
+      function downloadJson(data, filename = "data.json") {
+         const blob = new Blob([data], { type: "application/json" });
+         const url = URL.createObjectURL(blob);
+
+         $('#hidden-download-link')
+            .attr("href", url)
+            .attr("download", filename)[0]     // get native DOM element
+            .click();                          // trigger download
+      }
+
+
+      $(document).ready(function () {
+         // Cal Offset Button
+         $('#cal-offset-btn').on('click', function() {
+            $.ajax({
+               url: 'bfg.cgi',
+               type: 'POST',
+               data: 'action=caloffset'
+            });
+         });
+
+         // Cal Gain Button
+         $('#cal-gain-btn').on('click', function() {
+            $.ajax({
+               url: 'bfg.cgi',
+               type: 'POST',
+               data: 'action=calgain'
+            });
+         });
+
+         // Result dialog
+         $('#result-ok-btn').on('click', function() {$('#result-dialog')[0].close(); });
+
+         // Post Data Button
+         $('#post-data-btn').on('click', function() { 
+            var parrent = $('#post-data-btn')[0];
+            var dialog = $('#post-data-dialog')[0];
+
+            var today = new Date();
+            // Format the date to 'YYYY-MM-DD'
+            var day = ("0" + today.getDate()).slice(-2);
+            var month = ("0" + (today.getMonth() + 1)).slice(-2);
+            var formattedDate = today.getFullYear() + "-" + month + "-" + day;
+            $('#tb-post-data-match-date').val( formattedDate );
+
+            $('#tb-post-data-team-number').val(   teamNumber);
+            $('#tb-post-data-match-number').val(  matchNumber);
+            $('#tb-post-data-event-code').val(    eventName);
+
+            dialog.style.top  = parrent.offsetTop + "px";
+            dialog.showModal();
+         });
+
+         $('#cancel-bfg-data-btn').on('click', function() {$('#post-data-dialog')[0].close(); });
+         $('#save-local-bfg-data-btn').on('click', function() {
+            $('#post-data-dialog')[0].close();
+            downloadJson(lastBfgResponse, "bfg-data-download.json");
+         });
+         $('#submit-bfg-data-btn').on('click', function() {
+            $('#post-data-dialog')[0].close(); 
+            $.ajax({
+               url: 'https://playingwithfusion.com/frc/bfg_submit.php',
+               type: 'POST',
+               data: 'XDEBUG_SESSION=vsc&bfgdata=' + lastBfgResponse + 
+                  "&email=" + $('#tb-post-data-email').val() +
+                  "&teamnumber=" + $('#tb-post-data-team-number').val() +
+                  "&matchnumber=" + $('#tb-post-data-match-number').val() +
+                  "&matchdate=" + $('#tb-post-data-match-date').val() +
+                  "&eventcode=" + $('#tb-post-data-event-code').val(),
+               success: function(jqXHR, textStatus, errorThrown) {
+                  $('#result-dialog-title').text( "Success" );
+                  $('#result-dialog-text').html( "<p>BFG data was sucessfully uploaded to the cloud.</p>" );
+                  var dialog = $('#result-dialog')[0];
+                  dialog.showModal();
+               },
+               error: function(jqXHR, textStatus, errorThrown) {
+                  $('#result-dialog-title').text( "Error Sending Data" );
+                  $('#result-dialog-text').html( '<p>Unable to send BFG statistics to Playing With Fusion servers.</p><p>Error: ' + errorThrown + '</p>');
+                  var dialog = $('#result-dialog')[0];
+                  dialog.showModal();
+               }
+            });
+         });
+
+
+         // More settings button
+         $('#more-settings-btn').on('click', function() { 
+             $('#more-settings-btn').hide();
+             $('.more-settings').show();
+         });
+
+
+         // Set calibration dialog
+         $('#set-calibration-btn').on('click', function() { 
+            var parrent = $('#set-calibration-btn')[0];
+            var dialog = $('#set-calibration-dialog')[0];
+
+            $('#tb-cal-offset').val( +$('#cal-offset').text() || 0 );
+            $('#tb-cal-gain').val(   +$('#cal-gain').text()   || 0 );
+            dialog.style.top  = parrent.offsetTop + "px";
+            dialog.showModal();
+         });
+
+         $('#cancel-cal-btn').on('click', function() {$('#set-calibration-dialog')[0].close(); });
+         $('#save-cal-btn').on('click', function() {
+            $('#set-calibration-dialog')[0].close(); 
+            $.ajax({
+               url: 'bfg.cgi',
+               type: 'POST',
+               data: 'action=setcalibration&currentoffset=' + $('#tb-cal-offset').val() + "&currentgain=" + $('#tb-cal-gain').val()
+            });
+
+         });
+
+
+         // Set battery age dialog
+         $('#set-age-btn').on('click', function() { 
+            var parrent = $('#set-age-btn')[0];
+            var dialog = $('#set-battery-age-dialog')[0];
+
+            $('#tb-batt-capacity').val(   +$('#batt-capacity').text()  || 0 );
+            $('#tb-batt-age').val(        +$('#bat-age').text()        || 0 );
+            $('#tb-batt-num-cycles').val( +$('#bat-num-cycles').text() || 0 );
+            dialog.style.top  = parrent.offsetTop + "px";
+            dialog.showModal();
+         });
+
+         $('#cancel-age-btn').on('click', function() {$('#set-battery-age-dialog')[0].close(); });
+         $('#save-age-btn').on('click', function() {
+            $('#set-battery-age-dialog')[0].close(); 
+            $.ajax({
+               url: 'bfg.cgi',
+               type: 'POST',
+               data: 'action=setage&capacity=' + $('#tb-batt-capacity').val() + "&age=" + $('#tb-batt-age').val() + "&numcycles=" + $('#tb-batt-num-cycles').val()
+            });
+
+         });
+
+
+         // Reset BFG dialog
+         $('#reset-bfg-btn').on('click', function() { 
+            var parrent = $('#reset-bfg-btn')[0];
+            var dialog = $('#reset-bfg-dialog')[0];
+
+            $('#tb-reset-password').val("");
+            $('#save-reset-bfg-btn').hide();
+            dialog.style.top  = parrent.offsetTop + "px";
+            dialog.showModal();
+         });
+
+         $('#cancel-reset-bfg-btn').on('click', function() {$('#reset-bfg-dialog')[0].close(); });
+         $('#save-reset-bfg-btn').on('click', function() {
+            $('#reset-bfg-dialog')[0].close(); 
+            $.ajax({
+               url: 'bfg.cgi',
+               type: 'POST',
+               data: 'action=resetbfg&password=' + $('#tb-reset-password').val()
+            });
+
+         });
+
+         $('#tb-reset-password').on('input paste keyup', function() {
+            const value = $(this).val();
+
+            if (value === "BOMBSAWAY") {
+               $('#save-reset-bfg-btn').show();
+            } else {
+               $('#save-reset-bfg-btn').hide();
+            }
+         });
+
+
+         // Set display orientation Buttons
+         $('#set-disp-normal-btn').on('click', function() {
+            $.ajax({
+               url: 'bfg.cgi',
+               type: 'POST',
+               data: 'action=setdisp&inverted=0'
+            });
+         });
+
+         $('#set-disp-inverted-btn').on('click', function() {
+            $.ajax({
+               url: 'bfg.cgi',
+               type: 'POST',
+               data: 'action=setdisp&inverted=1'
+            });
+         });
+
+    
+         // Set battery nickname dialog
+         $('#set-nickname').on('click', function() { 
+            var parrent = $('#set-nickname')[0];
+            var dialog = $('#set-nickname-dialog')[0];
+
+            $('#tb-nickname').val( $('#nickname').text() );
+            dialog.style.top  = parrent.offsetTop + "px";
+            dialog.showModal();
+         });
+
+         $('#cancel-nickname-btn').on('click', function() {$('#set-nickname-dialog')[0].close(); });
+         $('#save-nickname-btn').on('click', function() {
+            $('#set-nickname-dialog')[0].close(); 
+            $.ajax({
+               url: 'bfg.cgi',
+               type: 'POST',
+               data: 'action=setname&name=' + $('#tb-nickname').val()
+            });
+
+         });
+
+
+         // Set battery manufacturer dialog
+         $('#set-batt-mfg-btn').on('click', function() { 
+            var parrent = $('#set-batt-mfg-btn')[0];
+            var dialog = $('#set-mfg-dialog')[0];
+            $('#cb-manufacturer').val( batteryManufacturerId );
+            dialog.style.top  = parrent.offsetTop + "px";
+            dialog.showModal();
+         });
+
+         $('#cancel-mfg-btn').on('click', function() {$('#set-mfg-dialog')[0].close(); });
+         $('#save-mfg-btn').on('click', function() {
+            $('#set-mfg-dialog')[0].close();
+            $.ajax({
+               url: 'bfg.cgi',
+               type: 'POST',
+               data: 'action=setmfg&mfg=' + $('#cb-manufacturer').val()
+            });
+
+         });
+      });
+
+      $(document).ready(function () {
+         function secondsToHhMmSs(totalSeconds) {
+            const hours = Math.floor(totalSeconds / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = Math.floor((totalSeconds % 60));
+            
+            result = '0';
+            if (hours > 0)
+            {
+               result = `${hours.toString()}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
+            }
+            else
+            {
+               result = `${minutes.toString()}:${seconds.toString().padStart(2, '0')}`
+            }
+
+            return result;
+         }
+
+         // Function to fetch dataS
+         function fetchData() {
+            $.ajaxSetup({ cache: false });
+
+            $.ajax({
+               url: 'bfg_state.json', // Replace with your actual server URL
+               type: 'GET',
+               dataType: 'json',
+               success: function (response,textStatus, jqXHR) {
+                  // Save off the raw response from the roboRIO
+                  lastBfgResponse = jqXHR.responseText;
+
+                  batteryManufacturerId = response.bfg_data.batt_mfg_id;
+
+                  $('#status-msg').text('Last updated: ' + new Date().toLocaleTimeString());
+
+                  teamNumber  = response.team_number;
+                  matchNumber = response.match_number;
+                  eventName   = response.event_name;
+                  
+                  $('#nickname').text(             response.bfg_data.nickname);
+                  $('#bfg-serial').text(           'BFG-' + String(response.bfg_data.bfg_serial).padStart(5, '0'));
+                  $('#batt-capacity').text(        response.bfg_data.batt_capacity.toFixed(1));
+                  $('#batt-rated-capacity').text(  response.bfg_data.batt_rated_capacity.toFixed(1));
+                  $('#batt-mfg').text(             response.bfg_data.batt_mfg);
+                  $('#bat-age').text(              (response.bfg_data.bat_age / (24 * 3600)).toFixed(1) );
+                  $('#bat-num-cycles').text(       response.bfg_data.bat_num_cycles);
+                  $('#bfg-firmware').text(         (response.bfg_data.bfg_firmware / 100).toFixed(2));
+
+                  $('#cal-offset').text(           response.bfg_data.cal_current_offset);
+                  $('#cal-gain').text(             response.bfg_data.cal_current_gain);
+
+                  $('#bfg-state').text(            response.bfg_data.bfg_state);
+                  $('#voltage').text(              response.bfg_data.voltage.toFixed(2));
+                  $('#current').text(              response.bfg_data.current.toFixed(2));
+                  $('#dod-ah').text(               response.bfg_data.dod_ah.toFixed(1));
+                  $('#dod-wh').text(               response.bfg_data.dod_wh.toFixed(0));
+                  $('#soc-ah').text(               response.bfg_data.soc_ah.toFixed(1));
+                  $('#soc-pct').text(              (100 * response.bfg_data.soc_ah / response.bfg_data.batt_capacity).toFixed(0));
+                  $('#effective-cap-ah').text(     response.bfg_data.effective_cap_ah.toFixed(1));
+                  $('#effective-cap-pct').text(    (100 * response.bfg_data.effective_cap_ah / response.bfg_data.batt_capacity).toFixed(0));
+
+                  $('#cycle-min-v').text(          response.bfg_data.cycle_min_v.toFixed(2));
+                  $('#cycle-max-v').text(          response.bfg_data.cycle_max_v.toFixed(2));
+                  $('#cycle-min-i').text(          response.bfg_data.cycle_min_i.toFixed(2));
+                  $('#cycle-max-i').text(          response.bfg_data.cycle_max_i.toFixed(2));
+                  $('#cycle-starting-v').text(     response.bfg_data.cycle_starting_v.toFixed(2));
+                  $('#cycle-rms-i').text(          response.bfg_data.cycle_rms_i.toFixed(2));
+                  $('#cycle-min-dod-ah').text(     response.bfg_data.cycle_min_dod_ah.toFixed(1));
+                  $('#cycle-min-dod-wh').text(     response.bfg_data.cycle_min_dod_wh.toFixed(0));
+                  $('#cycle-max-dod-ah').text(     response.bfg_data.cycle_max_dod_ah.toFixed(1));
+                  $('#cycle-max-dod-wh').text(     response.bfg_data.cycle_max_dod_wh.toFixed(0));
+                  $('#cycle-charge-time').text(    secondsToHhMmSs(response.bfg_data.cycle_charge_time));
+                  $('#cycle-discharge-time').text( secondsToHhMmSs(response.bfg_data.cycle_discharge_time));
+
+                  $('#match-min-v').text(          response.bfg_data.match_min_v.toFixed(2));
+                  $('#match-max-v').text(          response.bfg_data.match_max_v.toFixed(2));
+                  $('#match-min-i').text(          response.bfg_data.match_min_i.toFixed(2));
+                  $('#match-max-i').text(          response.bfg_data.match_max_i.toFixed(2));
+                  $('#match-starting-v').text(     response.bfg_data.match_starting_v.toFixed(2));
+                  $('#match-rms-i').text(          response.bfg_data.match_rms_i.toFixed(2));
+                  $('#match-min-dod-ah').text(     response.bfg_data.match_min_dod_ah.toFixed(1));
+                  $('#match-max-dod-ah').text(     response.bfg_data.match_max_dod_ah.toFixed(1));
+                  $('#match-charge-time').text(    secondsToHhMmSs(response.bfg_data.match_charge_time));
+                  $('#match-discharge-time').text( secondsToHhMmSs(response.bfg_data.match_discharge_time));
+                  $('#match-active-time').text(    secondsToHhMmSs(response.bfg_data.match_active_time));
+                  $('#match-start-dod-ah').text(   response.bfg_data.match_start_dod_ah.toFixed(1));
+                  $('#match-start-dod-wh').text(   response.bfg_data.match_start_dod_wh.toFixed(0));
+                  $('#match-end-dod-ah').text(     response.bfg_data.match_end_dod_ah.toFixed(1));
+                  $('#match-end-dod-wh').text(     response.bfg_data.match_end_dod_wh.toFixed(0));
+               },
+               error: function (xhr, status, error) {
+                  $('#status-msg').text('Error: Could not reach server.');
+                  console.error('AJAX Error: ', status, error);
+               }
+            });
+         }
+
+         // Run every 1000ms
+         setInterval(fetchData, 1000);
+      });
+   </script>
+</body>
+
+</html>

@@ -1,0 +1,1218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="libPlayingWithFusion">
+      <UniqueIdentifier>{6a95ec84-f268-483f-aeef-1c96b8f38776}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libPlayingWithFusion\include">
+      <UniqueIdentifier>{22eefeed-8d8e-4d57-a1fd-6f67154d2895}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wpinet">
+      <UniqueIdentifier>{72533505-d1ec-4ee3-894c-f6b176d31014}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wpinet\include">
+      <UniqueIdentifier>{72c2f744-f7b4-4f49-9738-181e044ea37a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wpinet\include\uv">
+      <UniqueIdentifier>{facaed7e-774f-40ab-b630-d21dd87e58db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wpinet\libuv">
+      <UniqueIdentifier>{af05f8d6-9526-49d3-98e2-1dbcc87daa69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wpinet\tcpsockets">
+      <UniqueIdentifier>{0d3e74ab-78d2-4034-8a86-9b757d643db0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wpinet\libuv\include">
+      <UniqueIdentifier>{8931bfff-8025-41c3-9bee-d0a8a3ac0207}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wpinet\tcpsockets\include">
+      <UniqueIdentifier>{d6efc1ad-4b91-4730-a22c-43334af5b076}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wpiutil">
+      <UniqueIdentifier>{e94a8870-7b4b-4d82-8575-a3efb72de92c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wpiutil\include">
+      <UniqueIdentifier>{cd3ad604-9b80-4342-a8b1-e4f63751d60b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wpiutil\llvm">
+      <UniqueIdentifier>{377544e9-db2e-4a83-adbd-95cb20a16201}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wpiutil\llvm\include">
+      <UniqueIdentifier>{a35979d6-f03a-44eb-a2ff-b07bca7a093c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wpiutil\sigslot">
+      <UniqueIdentifier>{9d5889bf-c9c2-4a54-92b5-dde343f0fab4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wpiutil\sigslot\include">
+      <UniqueIdentifier>{61b4659e-769b-47ef-a1c3-22a227f4ab8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wpiutil\fmtlib">
+      <UniqueIdentifier>{d847916e-b3fb-45af-8cfe-9727632aea47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wpiutil\fmtlib\include">
+      <UniqueIdentifier>{0626e191-6231-4aa9-b2c0-39785d442761}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wpiutil\expected">
+      <UniqueIdentifier>{633e78e3-794f-42aa-a45a-68d8a8c7245d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wpiutil\expected\include">
+      <UniqueIdentifier>{e712ed99-9878-4bff-be33-9eac69007dc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wpiutil\json">
+      <UniqueIdentifier>{25a170b2-67e0-412f-95ca-1374dcfa495c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wpiutil\json\include">
+      <UniqueIdentifier>{b1ecf834-bffe-4331-8cab-c45e14b7035f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wpiutil\mpack">
+      <UniqueIdentifier>{b0e0b9e2-0891-4877-a286-354116a97605}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wpiutil\mpack\include">
+      <UniqueIdentifier>{1884d722-4a85-4601-a7bb-be9196a70400}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wpiutil\nanopb">
+      <UniqueIdentifier>{78a6fcb9-4ec9-4e22-8260-cd5187515f51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wpiutil\nanopb\include">
+      <UniqueIdentifier>{712e4d66-30f1-483b-9fdf-683e44b788bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NI">
+      <UniqueIdentifier>{3d62bb8f-be21-4fc2-b512-9f07d480d667}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NI\FRC_NetworkCommunication">
+      <UniqueIdentifier>{050789d6-c71a-4018-b299-db04a6db3ae2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PCAN">
+      <UniqueIdentifier>{f6a4d5a3-a23a-46fe-9f37-68fe2d068079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HTML">
+      <UniqueIdentifier>{734872b6-050c-4789-8dbc-dd1edec88e6d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="libPlayingWithFusion\cpp\FusionFlashUtil.cpp">
+      <Filter>libPlayingWithFusion</Filter>
+    </ClCompile>
+    <ClCompile Include="libPlayingWithFusion\cpp\FusionHttpServer.cpp">
+      <Filter>libPlayingWithFusion</Filter>
+    </ClCompile>
+    <ClCompile Include="libPlayingWithFusion\cpp\FusionHttpServerConnection.cpp">
+      <Filter>libPlayingWithFusion</Filter>
+    </ClCompile>
+    <ClCompile Include="libPlayingWithFusion\cpp\PeriodicHelper.cpp">
+      <Filter>libPlayingWithFusion</Filter>
+    </ClCompile>
+    <ClCompile Include="libPlayingWithFusion\cpp\TimeOfFlightApi.cpp">
+      <Filter>libPlayingWithFusion</Filter>
+    </ClCompile>
+    <ClCompile Include="libPlayingWithFusion\cpp\TimeOfFlightImpl.cpp">
+      <Filter>libPlayingWithFusion</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\windows\DynamicDns.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\windows\MulticastServiceAnnouncer.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\windows\MulticastServiceResolver.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\fs-poll.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\idna.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\inet.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\random.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\strscpy.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\strtok.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\thread-common.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\threadpool.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\timer.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\uv-common.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\uv-data-getter-setters.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\version.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\async.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\core.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\detect-wakeup.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\dl.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\error.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\fs.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\fs-event.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\getaddrinfo.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\getnameinfo.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\handle.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\loop-watcher.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\pipe.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\poll.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\process.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\process-stdio.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\signal.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\snprintf.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\stream.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\tcp.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\thread.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\tty.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\udp.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\util.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\winapi.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\winsock.cpp">
+      <Filter>wpinet\libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\SafeThread.cpp">
+      <Filter>wpiutil</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\windows\Demangle.cpp">
+      <Filter>wpiutil</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\windows\StackTrace.cpp">
+      <Filter>wpiutil</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\cpp\llvm\ConvertUTF.cpp">
+      <Filter>wpiutil\llvm</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\cpp\llvm\ConvertUTFWrapper.cpp">
+      <Filter>wpiutil\llvm</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\cpp\llvm\ErrorHandling.cpp">
+      <Filter>wpiutil\llvm</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\cpp\llvm\MemAlloc.cpp">
+      <Filter>wpiutil\llvm</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\cpp\llvm\MemoryBuffer.cpp">
+      <Filter>wpiutil\llvm</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\cpp\llvm\raw_os_ostream.cpp">
+      <Filter>wpiutil\llvm</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\cpp\llvm\raw_ostream.cpp">
+      <Filter>wpiutil\llvm</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\cpp\llvm\SmallPtrSet.cpp">
+      <Filter>wpiutil\llvm</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\cpp\llvm\SmallVector.cpp">
+      <Filter>wpiutil\llvm</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\cpp\llvm\StringExtras.cpp">
+      <Filter>wpiutil\llvm</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\cpp\llvm\xxhash.cpp">
+      <Filter>wpiutil\llvm</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\src\format.cpp">
+      <Filter>wpiutil\fmtlib</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\src\os.cpp">
+      <Filter>wpiutil\fmtlib</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\tcpsockets\cpp\TCPAcceptor.cpp">
+      <Filter>wpinet\tcpsockets</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\tcpsockets\cpp\TCPConnector.cpp">
+      <Filter>wpinet\tcpsockets</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\tcpsockets\cpp\TCPConnector_parallel.cpp">
+      <Filter>wpinet\tcpsockets</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\tcpsockets\cpp\TCPStream.cpp">
+      <Filter>wpinet\tcpsockets</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Check.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\FsEvent.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Idle.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Loop.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\NameToAddr.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\NetworkStream.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Prepare.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Work.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\EventLoopRunner.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\hostname.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\http_parser.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\HttpParser.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\HttpServerConnection.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\HttpUtil.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\MimeTypes.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\MulticastHandleManager.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\ParallelTcpConnector.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\PortForwarder.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\raw_socket_istream.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\raw_socket_ostream.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\raw_uv_ostream.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\SocketError.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\UDPClient.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\WebServer.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\WebSocket.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\WebSocketSerializer.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\WebSocketServer.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\Base64.cpp">
+      <Filter>wpiutil</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\DataLog.cpp">
+      <Filter>wpiutil</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\DataLogBackgroundWriter.cpp">
+      <Filter>wpiutil</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\DataLogReader.cpp">
+      <Filter>wpiutil</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\DataLogWriter.cpp">
+      <Filter>wpiutil</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\FileLogger.cpp">
+      <Filter>wpiutil</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\future.cpp">
+      <Filter>wpiutil</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\leb128.cpp">
+      <Filter>wpiutil</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\Logger.cpp">
+      <Filter>wpiutil</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\MappedFileRegion.cpp">
+      <Filter>wpiutil</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\MessagePack.cpp">
+      <Filter>wpiutil</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\raw_istream.cpp">
+      <Filter>wpiutil</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\RawFrame.cpp">
+      <Filter>wpiutil</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\RuntimeCheck.cpp">
+      <Filter>wpiutil</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\sha1.cpp">
+      <Filter>wpiutil</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\StackTraceWrap.cpp">
+      <Filter>wpiutil</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\string.cpp">
+      <Filter>wpiutil</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\Synchronization.cpp">
+      <Filter>wpiutil</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\timestamp.cpp">
+      <Filter>wpiutil</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\mpack\src\mpack.cpp">
+      <Filter>wpiutil\mpack</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\nanopb\src\pb_common.cpp">
+      <Filter>wpiutil\nanopb</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\nanopb\src\pb_decode.cpp">
+      <Filter>wpiutil\nanopb</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\nanopb\src\pb_encode.cpp">
+      <Filter>wpiutil\nanopb</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Async.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\DsClient.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\fs.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\GetAddrInfo.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\GetNameInfo.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Handle.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Pipe.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Poll.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Process.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Signal.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Stream.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Tcp.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Timer.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Tty.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Udp.cpp">
+      <Filter>wpinet</Filter>
+    </ClCompile>
+    <ClCompile Include="libPlayingWithFusion\cpp\BattFuelGaugeImpl.cpp">
+      <Filter>libPlayingWithFusion</Filter>
+    </ClCompile>
+    <ClCompile Include="libPlayingWithFusion\cpp\XxHash32.cpp">
+      <Filter>libPlayingWithFusion</Filter>
+    </ClCompile>
+    <ClCompile Include="halCAN.c" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="libPlayingWithFusion\cpp\FirmwareImage.h">
+      <Filter>libPlayingWithFusion</Filter>
+    </ClInclude>
+    <ClInclude Include="libPlayingWithFusion\cpp\FusionFlashUtil.h">
+      <Filter>libPlayingWithFusion</Filter>
+    </ClInclude>
+    <ClInclude Include="libPlayingWithFusion\cpp\FusionHttpServer.h">
+      <Filter>libPlayingWithFusion</Filter>
+    </ClInclude>
+    <ClInclude Include="libPlayingWithFusion\cpp\FusionHttpServerConnection.h">
+      <Filter>libPlayingWithFusion</Filter>
+    </ClInclude>
+    <ClInclude Include="libPlayingWithFusion\cpp\PeriodicHelper.h">
+      <Filter>libPlayingWithFusion</Filter>
+    </ClInclude>
+    <ClInclude Include="libPlayingWithFusion\cpp\PeriodicTask.h">
+      <Filter>libPlayingWithFusion</Filter>
+    </ClInclude>
+    <ClInclude Include="libPlayingWithFusion\cpp\PWFController.h">
+      <Filter>libPlayingWithFusion</Filter>
+    </ClInclude>
+    <ClInclude Include="libPlayingWithFusion\cpp\TimeOfFlightImpl.h">
+      <Filter>libPlayingWithFusion</Filter>
+    </ClInclude>
+    <ClInclude Include="libPlayingWithFusion\include\TimeOfFlightApi.h">
+      <Filter>libPlayingWithFusion\include</Filter>
+    </ClInclude>
+    <ClInclude Include="libPlayingWithFusion\include\TimeOfFlightApiTypes.h">
+      <Filter>libPlayingWithFusion\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\windows\DynamicDns.h">
+      <Filter>wpinet</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\DsClient.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\EventLoopRunner.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\hostname.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\http_parser.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\HttpParser.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\HttpServerConnection.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\HttpUtil.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\HttpWebSocketServerConnection.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\MimeTypes.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\MulticastServiceAnnouncer.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\MulticastServiceResolver.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\NetworkAcceptor.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\NetworkStream.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\ParallelTcpConnector.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\PortForwarder.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\raw_socket_istream.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\raw_socket_ostream.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\raw_uv_ostream.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\SocketError.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\UDPClient.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\UrlParser.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\WebServer.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\WebSocket.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\WebSocketServer.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\WorkerThread.h">
+      <Filter>wpinet\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Async.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\AsyncFunction.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Buffer.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Check.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Error.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\FsEvent.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\GetAddrInfo.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\GetNameInfo.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Handle.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Idle.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Loop.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\NetworkStream.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Pipe.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Poll.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Prepare.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Process.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Request.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Signal.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Stream.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Tcp.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Timer.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Tty.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Udp.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\util.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Work.h">
+      <Filter>wpinet\include\uv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\include\uv\bsd.h">
+      <Filter>wpinet\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\include\uv\darwin.h">
+      <Filter>wpinet\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\include\uv\errno.h">
+      <Filter>wpinet\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\include\uv\linux.h">
+      <Filter>wpinet\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\include\uv\posix.h">
+      <Filter>wpinet\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\include\uv\threadpool.h">
+      <Filter>wpinet\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\include\uv\tree.h">
+      <Filter>wpinet\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\include\uv\unix.h">
+      <Filter>wpinet\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\include\uv\version.h">
+      <Filter>wpinet\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\include\uv\win.h">
+      <Filter>wpinet\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\include\uv.h">
+      <Filter>wpinet\libuv\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\heap-inl.h">
+      <Filter>wpinet\libuv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\idna.h">
+      <Filter>wpinet\libuv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\queue.h">
+      <Filter>wpinet\libuv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\strscpy.h">
+      <Filter>wpinet\libuv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\strtok.h">
+      <Filter>wpinet\libuv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\uv-common.h">
+      <Filter>wpinet\libuv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\atomicops-inl.h">
+      <Filter>wpinet\libuv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\fs-fd-hash-inl.h">
+      <Filter>wpinet\libuv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\handle-inl.h">
+      <Filter>wpinet\libuv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\internal.h">
+      <Filter>wpinet\libuv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\req-inl.h">
+      <Filter>wpinet\libuv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\stream-inl.h">
+      <Filter>wpinet\libuv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\winapi.h">
+      <Filter>wpinet\libuv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\winsock.h">
+      <Filter>wpinet\libuv</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\tcpsockets\include\wpinet\TCPAcceptor.h">
+      <Filter>wpinet\tcpsockets\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\tcpsockets\include\wpinet\TCPConnector.h">
+      <Filter>wpinet\tcpsockets\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\tcpsockets\include\wpinet\TCPStream.h">
+      <Filter>wpinet\tcpsockets\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\Algorithm.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\array.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\Base64.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\CallbackManager.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\circular_buffer.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\condition_variable.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\ct_string.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\DataLog.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\DataLog_c.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\DataLogBackgroundWriter.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\DataLogReader.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\DataLogWriter.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\DecayedDerivedFrom.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\Demangle.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\deprecated.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\EventVector.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\FastQueue.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\FileLogger.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\fs.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\future.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\interpolating_map.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\jni_util.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\leb128.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\Logger.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\MappedFileRegion.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\MessagePack.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\mutex.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\nodiscard.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\NullDeleter.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\print.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\priority_mutex.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\priority_queue.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\ProtoHelper.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\raw_istream.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\RawFrame.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\rotated_span.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\RuntimeCheck.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\SafeThread.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\sha1.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\SpanExtras.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\spinlock.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\StackTrace.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\static_circular_buffer.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\string.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\StringMap.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\SymbolExports.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\Synchronization.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\timestamp.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\UidVector.h">
+      <Filter>wpiutil\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\sigslot\include\wpi\Signal.h">
+      <Filter>wpiutil\sigslot\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\ADL.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\AlignOf.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\AllocatorBase.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\bit.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\Casting.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\Chrono.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\Compiler.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\ConvertUTF.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\DenseMap.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\DenseMapInfo.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\DenseMapInfoVariant.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\Endian.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\EpochTracker.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\Errc.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\Errno.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\ErrorHandling.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\function_ref.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\FunctionExtras.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\Hashing.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\iterator.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\iterator_range.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\MapVector.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\MathExtras.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\MemAlloc.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\MemoryBuffer.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\PointerIntPair.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\PointerLikeTypeTraits.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\PointerUnion.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\raw_os_ostream.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\raw_ostream.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\ReverseIteration.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\SmallPtrSet.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\SmallSet.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\SmallString.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\SmallVector.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\SmallVectorMemoryBuffer.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\STLForwardCompat.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\StringExtras.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\SwapByteOrder.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\type_traits.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\VersionTuple.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\WindowsError.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\xxhash.h">
+      <Filter>wpiutil\llvm\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\cpp\llvm\Windows\WindowsSupport.h">
+      <Filter>wpiutil\llvm</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\args.h">
+      <Filter>wpiutil\fmtlib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\base.h">
+      <Filter>wpiutil\fmtlib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\chrono.h">
+      <Filter>wpiutil\fmtlib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\color.h">
+      <Filter>wpiutil\fmtlib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\compile.h">
+      <Filter>wpiutil\fmtlib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\core.h">
+      <Filter>wpiutil\fmtlib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\format.h">
+      <Filter>wpiutil\fmtlib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\format-inl.h">
+      <Filter>wpiutil\fmtlib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\os.h">
+      <Filter>wpiutil\fmtlib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\ostream.h">
+      <Filter>wpiutil\fmtlib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\printf.h">
+      <Filter>wpiutil\fmtlib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\ranges.h">
+      <Filter>wpiutil\fmtlib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\std.h">
+      <Filter>wpiutil\fmtlib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\xchar.h">
+      <Filter>wpiutil\fmtlib\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\cpp\MulticastHandleManager.h">
+      <Filter>wpinet</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\cpp\WebSocketDebug.h">
+      <Filter>wpinet</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpinet\src\main\native\cpp\WebSocketSerializer.h">
+      <Filter>wpinet</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\adl_serializer.h">
+      <Filter>wpiutil\json\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\byte_container_with_subtype.h">
+      <Filter>wpiutil\json\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\json.h">
+      <Filter>wpiutil\json\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\json_fwd.h">
+      <Filter>wpiutil\json\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\ordered_map.h">
+      <Filter>wpiutil\json\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\thirdparty\hedley\hedley.h">
+      <Filter>wpiutil\json\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\thirdparty\hedley\hedley_undef.h">
+      <Filter>wpiutil\json\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\detail\abi_macros.h">
+      <Filter>wpiutil\json\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\detail\exceptions.h">
+      <Filter>wpiutil\json\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\detail\hash.h">
+      <Filter>wpiutil\json\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\detail\json_custom_base_class.h">
+      <Filter>wpiutil\json\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\detail\json_pointer.h">
+      <Filter>wpiutil\json\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\detail\json_ref.h">
+      <Filter>wpiutil\json\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\detail\macro_scope.h">
+      <Filter>wpiutil\json\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\detail\macro_unscope.h">
+      <Filter>wpiutil\json\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\detail\string_concat.h">
+      <Filter>wpiutil\json\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\detail\string_escape.h">
+      <Filter>wpiutil\json\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\detail\value_t.h">
+      <Filter>wpiutil\json\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\mpack\include\wpi\mpack.h">
+      <Filter>wpiutil\mpack\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\nanopb\include\pb.h">
+      <Filter>wpiutil\nanopb\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\nanopb\include\pb_common.h">
+      <Filter>wpiutil\nanopb\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\nanopb\include\pb_decode.h">
+      <Filter>wpiutil\nanopb\include</Filter>
+    </ClInclude>
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\nanopb\include\pb_encode.h">
+      <Filter>wpiutil\nanopb\include</Filter>
+    </ClInclude>
+    <ClInclude Include="halCAN.h" />
+    <ClInclude Include="NI\FRC_NetworkCommunication\CANSessionMux.h">
+      <Filter>NI\FRC_NetworkCommunication</Filter>
+    </ClInclude>
+    <ClInclude Include="libPlayingWithFusion\include\BattFuelGaugeApiTypes.h">
+      <Filter>libPlayingWithFusion\include</Filter>
+    </ClInclude>
+    <ClInclude Include="libPlayingWithFusion\cpp\BattFuelGaugeImpl.h">
+      <Filter>libPlayingWithFusion\include</Filter>
+    </ClInclude>
+    <ClInclude Include="NI\FRC_NetworkCommunication\FRCComm.h">
+      <Filter>NI\FRC_NetworkCommunication</Filter>
+    </ClInclude>
+    <ClInclude Include="libPlayingWithFusion\cpp\XxHash32.h">
+      <Filter>libPlayingWithFusion</Filter>
+    </ClInclude>
+    <ClInclude Include="PCAN\PCANBasic.h">
+      <Filter>PCAN</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wpilib\wpiutil\src\main\native\thirdparty\expected\include\wpi\expected">
+      <Filter>wpiutil\expected\include</Filter>
+    </None>
+    <None Include="wpilib\wpiutil\src\main\native\include\wpi\scope">
+      <Filter>wpiutil\include</Filter>
+    </None>
+    <None Include="PCAN\PCANBasic.dll">
+      <Filter>PCAN</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="PCAN\PCANBasic.lib">
+      <Filter>PCAN</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="html\bfg.html">
+      <Filter>HTML</Filter>
+    </CustomBuild>
+    <CustomBuild Include="html\favicon.png">
+      <Filter>HTML</Filter>
+    </CustomBuild>
+    <CustomBuild Include="html\jquery-3.6.0.min.js">
+      <Filter>HTML</Filter>
+    </CustomBuild>
+    <CustomBuild Include="html\logo_white.svg">
+      <Filter>HTML</Filter>
+    </CustomBuild>
+    <CustomBuild Include="html\style.css">
+      <Filter>HTML</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

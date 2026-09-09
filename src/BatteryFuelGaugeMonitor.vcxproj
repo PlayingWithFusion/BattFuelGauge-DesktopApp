@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{00cd9a0f-852e-4806-bb59-55355cf0fa6a}</ProjectGuid>
+    <RootNamespace>libPlayingWithFusionDriver</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)build\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build\$(Configuration)\temp\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)build\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build\$(Configuration)\temp\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)build\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build\$(Configuration)\temp\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)build\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build\$(Configuration)\temp\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32_PCAN</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>libPlayingWithFusion\include;NI\;wpilib\wpinet\src\main\native\include;wpilib\wpinet\src\main\native\thirdparty\libuv\include;wpilib\wpinet\src\main\native\thirdparty\libuv\src;wpilib\wpinet\src\main\native\thirdparty\tcpsockets\include;wpilib\wpiutil\src\main\native\include;wpilib\wpiutil\src\main\native\thirdparty\expected\include;wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include;wpilib\wpiutil\src\main\native\thirdparty\json\include;wpilib\wpiutil\src\main\native\thirdparty\llvm\include;wpilib\wpiutil\src\main\native\thirdparty\mpack\include;wpilib\wpiutil\src\main\native\thirdparty\nanopb\include;wpilib\wpiutil\src\main\native\thirdparty\sigslot\include;wpilib\hal\src\main\native\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalOptions>/utf-8 /Zc:preprocessor /wd5105 %(AdditionalOptions)</AdditionalOptions>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(SolutionDir)build\candle\$(Configuration)\candle.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32_PCAN</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>libPlayingWithFusion\include;NI\;wpilib\wpinet\src\main\native\include;wpilib\wpinet\src\main\native\thirdparty\libuv\include;wpilib\wpinet\src\main\native\thirdparty\libuv\src;wpilib\wpinet\src\main\native\thirdparty\tcpsockets\include;wpilib\wpiutil\src\main\native\include;wpilib\wpiutil\src\main\native\thirdparty\expected\include;wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include;wpilib\wpiutil\src\main\native\thirdparty\json\include;wpilib\wpiutil\src\main\native\thirdparty\llvm\include;wpilib\wpiutil\src\main\native\thirdparty\mpack\include;wpilib\wpiutil\src\main\native\thirdparty\nanopb\include;wpilib\wpiutil\src\main\native\thirdparty\sigslot\include;wpilib\hal\src\main\native\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalOptions>/utf-8 /Zc:preprocessor /wd5105 %(AdditionalOptions)</AdditionalOptions>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(SolutionDir)build\candle\$(Configuration)\candle.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32_PCAN</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>libPlayingWithFusion\include;NI\;wpilib\wpinet\src\main\native\include;wpilib\wpinet\src\main\native\thirdparty\libuv\include;wpilib\wpinet\src\main\native\thirdparty\libuv\src;wpilib\wpinet\src\main\native\thirdparty\tcpsockets\include;wpilib\wpiutil\src\main\native\include;wpilib\wpiutil\src\main\native\thirdparty\expected\include;wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include;wpilib\wpiutil\src\main\native\thirdparty\json\include;wpilib\wpiutil\src\main\native\thirdparty\llvm\include;wpilib\wpiutil\src\main\native\thirdparty\mpack\include;wpilib\wpiutil\src\main\native\thirdparty\nanopb\include;wpilib\wpiutil\src\main\native\thirdparty\sigslot\include;wpilib\hal\src\main\native\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalOptions>/utf-8 /Zc:preprocessor /wd5105 %(AdditionalOptions)</AdditionalOptions>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(SolutionDir)build\candle\$(Configuration)\candle.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32_PCAN</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>libPlayingWithFusion\include;NI\;wpilib\wpinet\src\main\native\include;wpilib\wpinet\src\main\native\thirdparty\libuv\include;wpilib\wpinet\src\main\native\thirdparty\libuv\src;wpilib\wpinet\src\main\native\thirdparty\tcpsockets\include;wpilib\wpiutil\src\main\native\include;wpilib\wpiutil\src\main\native\thirdparty\expected\include;wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include;wpilib\wpiutil\src\main\native\thirdparty\json\include;wpilib\wpiutil\src\main\native\thirdparty\llvm\include;wpilib\wpiutil\src\main\native\thirdparty\mpack\include;wpilib\wpiutil\src\main\native\thirdparty\nanopb\include;wpilib\wpiutil\src\main\native\thirdparty\sigslot\include;wpilib\hal\src\main\native\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalOptions>/utf-8 /Zc:preprocessor /wd5105 %(AdditionalOptions)</AdditionalOptions>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(SolutionDir)build\candle\$(Configuration)\candle.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="halCAN.c" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="libPlayingWithFusion\cpp\BattFuelGaugeImpl.cpp" />
+    <ClCompile Include="libPlayingWithFusion\cpp\FusionFlashUtil.cpp" />
+    <ClCompile Include="libPlayingWithFusion\cpp\FusionHttpServer.cpp" />
+    <ClCompile Include="libPlayingWithFusion\cpp\FusionHttpServerConnection.cpp" />
+    <ClCompile Include="libPlayingWithFusion\cpp\PeriodicHelper.cpp" />
+    <ClCompile Include="libPlayingWithFusion\cpp\TimeOfFlightApi.cpp" />
+    <ClCompile Include="libPlayingWithFusion\cpp\TimeOfFlightImpl.cpp" />
+    <ClCompile Include="libPlayingWithFusion\cpp\XxHash32.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\DsClient.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\EventLoopRunner.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\hostname.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\HttpParser.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\HttpServerConnection.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\HttpUtil.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\http_parser.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\MimeTypes.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\MulticastHandleManager.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\ParallelTcpConnector.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\PortForwarder.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\raw_socket_istream.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\raw_socket_ostream.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\raw_uv_ostream.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\SocketError.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\UDPClient.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Async.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Check.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\FsEvent.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\GetAddrInfo.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\GetNameInfo.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Handle.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Idle.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Loop.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\NameToAddr.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\NetworkStream.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Pipe.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Poll.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Prepare.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Process.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Signal.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Stream.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Tcp.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Timer.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Tty.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Udp.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\uv\Work.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\WebServer.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\WebSocket.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\WebSocketSerializer.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\cpp\WebSocketServer.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\fs-poll.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\idna.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\inet.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\random.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\strscpy.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\strtok.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\thread-common.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\threadpool.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\timer.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\uv-common.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\uv-data-getter-setters.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\version.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\async.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\core.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\detect-wakeup.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\dl.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\error.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\fs-event.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\fs.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\getaddrinfo.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\getnameinfo.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\handle.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\loop-watcher.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\pipe.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\poll.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\process-stdio.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\process.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\signal.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\snprintf.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\stream.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\tcp.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\thread.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\tty.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\udp.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\util.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\winapi.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\winsock.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\tcpsockets\cpp\TCPAcceptor.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\tcpsockets\cpp\TCPConnector.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\tcpsockets\cpp\TCPConnector_parallel.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\thirdparty\tcpsockets\cpp\TCPStream.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\windows\DynamicDns.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\windows\MulticastServiceAnnouncer.cpp" />
+    <ClCompile Include="wpilib\wpinet\src\main\native\windows\MulticastServiceResolver.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\Base64.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\DataLog.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\DataLogBackgroundWriter.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\DataLogReader.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\DataLogWriter.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\FileLogger.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\fs.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\future.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\leb128.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\Logger.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\MappedFileRegion.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\MessagePack.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\RawFrame.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\raw_istream.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\RuntimeCheck.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\SafeThread.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\sha1.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\StackTraceWrap.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\string.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\Synchronization.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\cpp\timestamp.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\src\format.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\src\os.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\cpp\llvm\ConvertUTF.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\cpp\llvm\ConvertUTFWrapper.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\cpp\llvm\ErrorHandling.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\cpp\llvm\MemAlloc.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\cpp\llvm\MemoryBuffer.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\cpp\llvm\raw_ostream.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\cpp\llvm\raw_os_ostream.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\cpp\llvm\SmallPtrSet.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\cpp\llvm\SmallVector.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\cpp\llvm\StringExtras.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\cpp\llvm\xxhash.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\mpack\src\mpack.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\nanopb\src\pb_common.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\nanopb\src\pb_decode.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\thirdparty\nanopb\src\pb_encode.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\windows\Demangle.cpp" />
+    <ClCompile Include="wpilib\wpiutil\src\main\native\windows\StackTrace.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="halCAN.h" />
+    <ClInclude Include="PCAN\PCANBasic.h" />
+    <ClInclude Include="NI\FRC_NetworkCommunication\CANSessionMux.h" />
+    <ClInclude Include="NI\FRC_NetworkCommunication\FRCComm.h" />
+    <ClInclude Include="libPlayingWithFusion\cpp\BattFuelGaugeImpl.h" />
+    <ClInclude Include="libPlayingWithFusion\cpp\FirmwareImage.h" />
+    <ClInclude Include="libPlayingWithFusion\cpp\FusionFlashUtil.h" />
+    <ClInclude Include="libPlayingWithFusion\cpp\FusionHttpServer.h" />
+    <ClInclude Include="libPlayingWithFusion\cpp\FusionHttpServerConnection.h" />
+    <ClInclude Include="libPlayingWithFusion\cpp\PeriodicHelper.h" />
+    <ClInclude Include="libPlayingWithFusion\cpp\PeriodicTask.h" />
+    <ClInclude Include="libPlayingWithFusion\cpp\PWFController.h" />
+    <ClInclude Include="libPlayingWithFusion\cpp\TimeOfFlightImpl.h" />
+    <ClInclude Include="libPlayingWithFusion\cpp\XxHash32.h" />
+    <ClInclude Include="libPlayingWithFusion\include\BattFuelGaugeApiTypes.h" />
+    <ClInclude Include="libPlayingWithFusion\include\TimeOfFlightApi.h" />
+    <ClInclude Include="libPlayingWithFusion\include\TimeOfFlightApiTypes.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\cpp\MulticastHandleManager.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\cpp\WebSocketDebug.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\cpp\WebSocketSerializer.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\DsClient.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\EventLoopRunner.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\hostname.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\HttpParser.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\HttpServerConnection.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\HttpUtil.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\HttpWebSocketServerConnection.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\http_parser.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\MimeTypes.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\MulticastServiceAnnouncer.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\MulticastServiceResolver.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\NetworkAcceptor.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\NetworkStream.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\ParallelTcpConnector.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\PortForwarder.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\raw_socket_istream.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\raw_socket_ostream.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\raw_uv_ostream.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\SocketError.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\UDPClient.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\UrlParser.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Async.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\AsyncFunction.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Buffer.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Check.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Error.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\FsEvent.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\GetAddrInfo.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\GetNameInfo.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Handle.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Idle.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Loop.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\NetworkStream.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Pipe.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Poll.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Prepare.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Process.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Request.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Signal.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Stream.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Tcp.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Timer.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Tty.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Udp.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\util.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\uv\Work.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\WebServer.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\WebSocket.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\WebSocketServer.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\include\wpinet\WorkerThread.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\include\uv.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\include\uv\bsd.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\include\uv\darwin.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\include\uv\errno.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\include\uv\linux.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\include\uv\posix.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\include\uv\threadpool.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\include\uv\tree.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\include\uv\unix.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\include\uv\version.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\include\uv\win.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\heap-inl.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\idna.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\queue.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\strscpy.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\strtok.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\uv-common.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\atomicops-inl.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\fs-fd-hash-inl.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\handle-inl.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\internal.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\req-inl.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\stream-inl.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\winapi.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\libuv\src\win\winsock.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\tcpsockets\include\wpinet\TCPAcceptor.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\tcpsockets\include\wpinet\TCPConnector.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\thirdparty\tcpsockets\include\wpinet\TCPStream.h" />
+    <ClInclude Include="wpilib\wpinet\src\main\native\windows\DynamicDns.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\Algorithm.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\array.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\Base64.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\CallbackManager.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\circular_buffer.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\condition_variable.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\ct_string.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\DataLog.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\DataLogBackgroundWriter.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\DataLogReader.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\DataLogWriter.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\DataLog_c.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\DecayedDerivedFrom.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\Demangle.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\deprecated.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\EventVector.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\FastQueue.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\FileLogger.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\fs.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\future.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\interpolating_map.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\jni_util.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\leb128.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\Logger.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\MappedFileRegion.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\MessagePack.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\mutex.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\nodiscard.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\NullDeleter.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\print.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\priority_mutex.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\priority_queue.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\ProtoHelper.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\RawFrame.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\raw_istream.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\rotated_span.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\RuntimeCheck.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\SafeThread.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\sha1.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\SpanExtras.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\spinlock.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\StackTrace.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\static_circular_buffer.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\string.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\StringMap.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\SymbolExports.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\Synchronization.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\timestamp.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\include\wpi\UidVector.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\args.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\base.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\chrono.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\color.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\compile.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\core.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\format-inl.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\format.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\os.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\ostream.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\printf.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\ranges.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\std.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\fmtlib\include\fmt\xchar.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\adl_serializer.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\byte_container_with_subtype.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\detail\abi_macros.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\detail\exceptions.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\detail\hash.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\detail\json_custom_base_class.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\detail\json_pointer.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\detail\json_ref.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\detail\macro_scope.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\detail\macro_unscope.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\detail\string_concat.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\detail\string_escape.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\detail\value_t.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\json.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\json_fwd.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\ordered_map.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\thirdparty\hedley\hedley.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\json\include\wpi\thirdparty\hedley\hedley_undef.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\cpp\llvm\Windows\WindowsSupport.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\ADL.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\AlignOf.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\AllocatorBase.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\bit.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\Casting.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\Chrono.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\Compiler.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\ConvertUTF.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\DenseMap.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\DenseMapInfo.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\DenseMapInfoVariant.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\Endian.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\EpochTracker.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\Errc.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\Errno.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\ErrorHandling.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\FunctionExtras.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\function_ref.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\Hashing.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\iterator.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\iterator_range.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\MapVector.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\MathExtras.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\MemAlloc.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\MemoryBuffer.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\PointerIntPair.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\PointerLikeTypeTraits.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\PointerUnion.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\raw_ostream.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\raw_os_ostream.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\ReverseIteration.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\SmallPtrSet.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\SmallSet.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\SmallString.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\SmallVector.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\SmallVectorMemoryBuffer.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\STLForwardCompat.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\StringExtras.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\SwapByteOrder.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\type_traits.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\VersionTuple.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\WindowsError.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\llvm\include\wpi\xxhash.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\mpack\include\wpi\mpack.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\nanopb\include\pb.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\nanopb\include\pb_common.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\nanopb\include\pb_decode.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\nanopb\include\pb_encode.h" />
+    <ClInclude Include="wpilib\wpiutil\src\main\native\thirdparty\sigslot\include\wpi\Signal.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="html\bfg.html">
+      <DeploymentContent>true</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</DeploymentContent>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xxd -i %(Identity) $(SolutionDir)build\html\%(Filename).h</Command>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BuildInParallel>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xxd -i %(Identity) $(SolutionDir)build\html\%(Filename).h</Command>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</BuildInParallel>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">xxd -i %(Identity) $(SolutionDir)build\html\%(Filename).h</Command>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">xxd -i %(Identity) $(SolutionDir)build\html\%(Filename).h</Command>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</BuildInParallel>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)build\html\%(Filename).h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)build\html\%(Filename).h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)build\html\%(Filename).h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)build\html\%(Filename).h</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating %(Filename).h from %(Identity)</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating %(Filename).h from %(Identity)</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating %(Filename).h from %(Identity)</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating %(Filename).h from %(Identity)</Message>
+    </CustomBuild>
+    <CustomBuild Include="html\jquery-3.6.0.min.js">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xxd -i %(Identity) $(SolutionDir)build\html\%(Filename).h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)build\html\%(Filename).h</Outputs>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BuildInParallel>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xxd -i %(Identity) $(SolutionDir)build\html\%(Filename).h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)build\html\%(Filename).h</Outputs>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</BuildInParallel>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">xxd -i %(Identity) $(SolutionDir)build\html\%(Filename).h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)build\html\%(Filename).h</Outputs>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">xxd -i %(Identity) $(SolutionDir)build\html\%(Filename).h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)build\html\%(Filename).h</Outputs>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating %(Filename).h from %(Identity)</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating %(Filename).h from %(Identity)</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating %(Filename).h from %(Identity)</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating %(Filename).h from %(Identity)</Message>
+    </CustomBuild>
+    <CustomBuild Include="html\logo_white.svg">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xxd -i %(Identity) $(SolutionDir)build\html\%(Filename).h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)build\html\%(Filename).h</Outputs>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BuildInParallel>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xxd -i %(Identity) $(SolutionDir)build\html\%(Filename).h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)build\html\%(Filename).h</Outputs>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</BuildInParallel>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">xxd -i %(Identity) $(SolutionDir)build\html\%(Filename).h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)build\html\%(Filename).h</Outputs>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">xxd -i %(Identity) $(SolutionDir)build\html\%(Filename).h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)build\html\%(Filename).h</Outputs>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating %(Filename).h from %(Identity)</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating %(Filename).h from %(Identity)</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating %(Filename).h from %(Identity)</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating %(Filename).h from %(Identity)</Message>
+    </CustomBuild>
+    <CustomBuild Include="html\style.css">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xxd -i %(Identity) $(SolutionDir)build\html\%(Filename).h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)build\html\%(Filename).h</Outputs>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BuildInParallel>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xxd -i %(Identity) $(SolutionDir)build\html\%(Filename).h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)build\html\%(Filename).h</Outputs>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</BuildInParallel>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">xxd -i %(Identity) $(SolutionDir)build\html\%(Filename).h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)build\html\%(Filename).h</Outputs>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">xxd -i %(Identity) $(SolutionDir)build\html\%(Filename).h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)build\html\%(Filename).h</Outputs>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating %(Filename).h from %(Identity)</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating %(Filename).h from %(Identity)</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating %(Filename).h from %(Identity)</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating %(Filename).h from %(Identity)</Message>
+    </CustomBuild>
+    <None Include="PCAN\PCANBasic.dll" />
+    <None Include="wpilib\wpiutil\src\main\native\include\wpi\scope" />
+    <None Include="wpilib\wpiutil\src\main\native\thirdparty\expected\include\wpi\expected" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="PCAN\PCANBasic.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="html\favicon.png">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xxd -i %(Identity) $(SolutionDir)build\html\%(Filename).h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)build\html\%(Filename).h</Outputs>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</BuildInParallel>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xxd -i %(Identity) $(SolutionDir)build\html\%(Filename).h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)build\html\%(Filename).h</Outputs>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</BuildInParallel>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">xxd -i %(Identity) $(SolutionDir)build\html\%(Filename).h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)build\html\%(Filename).h</Outputs>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">xxd -i %(Identity) $(SolutionDir)build\html\%(Filename).h</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)build\html\%(Filename).h</Outputs>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating %(Filename).h from %(Identity)</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating %(Filename).h from %(Identity)</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating %(Filename).h from %(Identity)</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating %(Filename).h from %(Identity)</Message>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
