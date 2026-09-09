@@ -6,7 +6,6 @@
 #include <wpinet/uv/Tcp.h>
 #include "FusionFlashUtil.h"
 #include "FusionHttpServerConnection.h"
-#include "BattFuelGaugeImpl.h"
 
 
 namespace uv = wpi::uv;
@@ -18,18 +17,26 @@ extern const size_t resourceFaviconLength;
 extern const unsigned char resourceFavicon[];
 extern const unsigned char resourceVenomLogo[];
 
+// Include static HTML resources (and dependcies)
 #include "../../../build/html/bfg.h"
 #include "../../../build/html/favicon.h"
 #include "../../../build/html/jquery-3.6.0.min.h"
 #include "../../../build/html/logo_white.h"
 #include "../../../build/html/style.h"
 
-BattFuelGaugeImpl bfg(0, 1);
-
+// Create 256 BFG objects for all possible source addresses.
+#define NUM_BFG_OBJECTS          256
+static BattFuelGaugeImpl *bfgArray[NUM_BFG_OBJECTS];
+static int lastBfgSrcAddr = 0;
 
 FusionHttpServerConnection::FusionHttpServerConnection(std::shared_ptr<uv::Stream> stream, FusionFlashUtil &flashUtil) : HttpServerConnection(stream), m_flashUtil(flashUtil) {
    m_request.body.connect_connection([this](std::string_view str, bool isFinal) {ProcessBody(str, isFinal); });
    m_request.messageBegin.connect_connection([this] {ProcessNewRequest(); });
+
+   for (int i = 0; i < NUM_BFG_OBJECTS; i++)
+   {
+      bfgArray[i] = new BattFuelGaugeImpl(i, 0);
+   }
 }
 
 void FusionHttpServerConnection::DecodeGetPost(std::string_view str, map<string, string> &dst) {
@@ -105,13 +112,18 @@ void FusionHttpServerConnection::ProcessRequest() {
          wpi::SmallString<4096> buf;
          wpi::raw_svector_ostream os{ buf };
 
-         //HACK  Redirect to the BFG page
+         // Redirect to the BFG page if the GET/POST field 'action' is 'Live+Data'
          if (m_post["action"].compare("Live+Data") == 0) {
-            SendResponse(302, "OK", "text/html", os.str(), "Location: bfg.html");
-            bfg.m_sensorID = stoi(m_post["srcaddr"]);
-            bfg.m_deviceId = (pwf_device_t)0;// (pwf_device_t)stoi(m_post["devid"]);
-            bfg.m_firmwareVersion = 0;
-            bfg.m_serialNumber = 0;// (uint32_t)stoi(m_post["serial"]);
+            if (m_post.contains("srcaddr"))
+            {
+               int srcAddr = stoi(m_post["srcaddr"]);
+               if ((srcAddr >= 0) && (srcAddr < NUM_BFG_OBJECTS))
+               {
+                  lastBfgSrcAddr = srcAddr;
+               }
+            }
+
+            SendResponse(302, "OK", "text/html", os.str(), "Location: bfg.html?srcaddr=" + std::to_string(lastBfgSrcAddr));
          }
          else
          {
@@ -123,14 +135,34 @@ void FusionHttpServerConnection::ProcessRequest() {
          wpi::SmallString<4096> buf;
          wpi::raw_svector_ostream os{ buf };
 
-         RenderBfgStateJSONWithHash(os);
+         int bfgAddr = lastBfgSrcAddr;
+         if (m_get.contains("srcaddr"))
+         {
+            int srcAddr = stoi(m_get["srcaddr"]);
+            if ((srcAddr >= 0) && (srcAddr < NUM_BFG_OBJECTS))
+            {
+               bfgAddr = srcAddr;
+            }
+         }
+
+         RenderBfgStateJSONWithHash(os, bfgArray[bfgAddr]);
          SendResponse(200, "OK", "text/json", os.str(), "Cache-Control: no-store, no-cache, must-revalidate, pre-check=0, post-check=0, max-age=0\r\nPragma: no-cache\r\nExpires: Mon, 3 Jan 2000 12:34:56 GMT\r\n");
       }
       else if (path.compare("/bfg.cgi") == 0) {
          wpi::SmallString<4096> buf;
          wpi::raw_svector_ostream os{ buf };
 
-         RenderBfgCgi(os);
+         int bfgAddr = lastBfgSrcAddr;
+         if (m_post.contains("srcaddr"))
+         {
+            int srcAddr = stoi(m_post["srcaddr"]);
+            if ((srcAddr >= 0) && (srcAddr < NUM_BFG_OBJECTS))
+            {
+               bfgAddr = srcAddr;
+            }
+         }
+
+         RenderBfgCgi(os, bfgArray[bfgAddr]);
          SendResponse(200, "OK", "text/json", os.str(), "Cache-Control: no-store, no-cache, must-revalidate, pre-check=0, post-check=0, max-age=0\r\nPragma: no-cache\r\nExpires: Mon, 3 Jan 2000 12:34:56 GMT\r\n");
       }
       else if (path.compare("/favicon.png") == 0) {
@@ -175,36 +207,36 @@ void FusionHttpServerConnection::ProcessRequest() {
    }
 }
 
-void FusionHttpServerConnection::RenderBfgStateJSONWithHash(wpi::raw_svector_ostream& outStream) {
-   bfg.ExecuteTask();
-   outStream << bfg.GetBfgStateJSON();
+void FusionHttpServerConnection::RenderBfgStateJSONWithHash(wpi::raw_svector_ostream& outStream, BattFuelGaugeImpl *pBfg) {
+   pBfg->ExecuteTask();
+   outStream << pBfg->GetBfgStateJSON();
 }
 
-void FusionHttpServerConnection::RenderBfgCgi(wpi::raw_svector_ostream& outStream) {
+void FusionHttpServerConnection::RenderBfgCgi(wpi::raw_svector_ostream& outStream, BattFuelGaugeImpl* pBfg) {
    try {
       if (m_post["action"].compare("setname") == 0) {
-         bfg.SetNickname(m_post["name"]);
+         pBfg->SetNickname(m_post["name"]);
       }
       else if (m_post["action"].compare("setmfg") == 0) {
-         bfg.SetManufacturer((BattFuelGauge_BattMfg)std::stoi(m_post["mfg"]));
+         pBfg->SetManufacturer((BattFuelGauge_BattMfg)std::stoi(m_post["mfg"]));
       }
       else if (m_post["action"].compare("setcalibration") == 0) {
-         bfg.SetCalibrationVals((uint32_t)(unsigned long long)std::stoll(m_post["currentoffset"]), (uint32_t)(unsigned long long)std::stoll(m_post["currentgain"]));
+         pBfg->SetCalibrationVals((uint32_t)(unsigned long long)std::stoll(m_post["currentoffset"]), (uint32_t)(unsigned long long)std::stoll(m_post["currentgain"]));
       }
       else if (m_post["action"].compare("setage") == 0) {
-         bfg.SetBatteryAge(std::stof(m_post["capacity"]), (uint32_t)(std::stof(m_post["age"]) * (24.0 * 3600.0)), (uint32_t)(unsigned long long)std::stol(m_post["numcycles"]));
+         pBfg->SetBatteryAge(std::stof(m_post["capacity"]), (uint32_t)(std::stof(m_post["age"]) * (24.0 * 3600.0)), (uint32_t)(unsigned long long)std::stol(m_post["numcycles"]));
       }
       else if ((m_post["action"].compare("resetbfg") == 0) && (m_post["password"].compare("BOMBSAWAY") == 0)) {
-         bfg.ResetAllBatteryStats();
+         pBfg->ResetAllBatteryStats();
       }
       else if (m_post["action"].compare("setdisp") == 0) {
-         bfg.SetDisplay(std::stoi(m_post["inverted"]));
+         pBfg->SetDisplay(std::stoi(m_post["inverted"]));
       }
       else if (m_post["action"].compare("caloffset") == 0) {
-         bfg.InitiateCurrentOffsetCalibration();
+         pBfg->InitiateCurrentOffsetCalibration();
       }
       else if (m_post["action"].compare("calgain") == 0) {
-         bfg.InitiateCurrentGainCalibration();
+         pBfg->InitiateCurrentGainCalibration();
       }
 
       outStream << "{\"success\":true}\n";
@@ -241,9 +273,7 @@ void FusionHttpServerConnection::RenderIndex(wpi::raw_svector_ostream &outStream
    outStream << "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">";
  
    FlashingState flashState = m_flashUtil.GetFlashState();
-#ifndef WIN32
    if (flashState == FlashingState::InProcess) 
-#endif // WIN32
    {
       outStream << "<meta http-equiv=\"refresh\" content=\"2\">";
    }

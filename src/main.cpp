@@ -16,6 +16,9 @@
 #include "halCAN.h"
 #include <windows.h>
 
+pwf::FusionFlashUtil flashUtil;
+pwf::FusionHttpServer httpServer(flashUtil);
+
 
 int32_t HAL_GetTeamNumber(void) {
    return 0;

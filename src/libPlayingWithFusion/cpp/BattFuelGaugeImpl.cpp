@@ -21,7 +21,7 @@ static void FRC_NetworkCommunication_CANSessionMux_receiveMessage(uint32_t *id, 
 }
 #endif
 
-pwf::FusionFlashUtil flashUtil;
+extern pwf::FusionFlashUtil flashUtil;
 
 using namespace pwf;
 

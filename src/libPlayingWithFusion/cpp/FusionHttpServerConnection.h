@@ -5,6 +5,7 @@
 #include <wpinet/HttpServerConnection.h>
 #include <wpinet/raw_uv_ostream.h>
 #include "FusionFlashUtil.h"
+#include "BattFuelGaugeImpl.h"
 
 namespace uv = wpi::uv;
 using namespace std;
@@ -22,8 +23,8 @@ protected:
 
    void ProcessBody(std::string_view str, bool isFinal);
    void RenderIndex(wpi::raw_svector_ostream &outStream);
-   void RenderBfgStateJSONWithHash(wpi::raw_svector_ostream& outStream);
-   void RenderBfgCgi(wpi::raw_svector_ostream& outStream);
+   void RenderBfgStateJSONWithHash(wpi::raw_svector_ostream& outStream, BattFuelGaugeImpl* pBfg);
+   void RenderBfgCgi(wpi::raw_svector_ostream& outStream, BattFuelGaugeImpl* pBfg);
    void DecodeGetPost(std::string_view str, map<string, string> &dst);
 
 private:

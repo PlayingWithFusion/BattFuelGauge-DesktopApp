@@ -325,6 +325,16 @@
       let matchNumber = 0;
       let eventName = "";
 
+      let srcAddrField = "";
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      if (urlParams.has('srcaddr')) {
+         srcAddr = parseInt(urlParams.get('srcaddr'), 10);
+         if ((srcAddr >= 0) && (srcAddr < 256)) {
+            srcAddrField = 'srcaddr=' + srcAddr + '&';
+         }
+      }
+
       function downloadJson(data, filename = "data.json") {
          const blob = new Blob([data], { type: "application/json" });
          const url = URL.createObjectURL(blob);
@@ -342,7 +352,7 @@
             $.ajax({
                url: 'bfg.cgi',
                type: 'POST',
-               data: 'action=caloffset'
+               data: srcAddrField + 'action=caloffset'
             });
          });
 
@@ -351,7 +361,7 @@
             $.ajax({
                url: 'bfg.cgi',
                type: 'POST',
-               data: 'action=calgain'
+               data: srcAddrField + 'action=calgain'
             });
          });
 
@@ -434,7 +444,7 @@
             $.ajax({
                url: 'bfg.cgi',
                type: 'POST',
-               data: 'action=setcalibration&currentoffset=' + $('#tb-cal-offset').val() + "&currentgain=" + $('#tb-cal-gain').val()
+               data: srcAddrField + 'action=setcalibration&currentoffset=' + $('#tb-cal-offset').val() + "&currentgain=" + $('#tb-cal-gain').val()
             });
 
          });
@@ -458,7 +468,7 @@
             $.ajax({
                url: 'bfg.cgi',
                type: 'POST',
-               data: 'action=setage&capacity=' + $('#tb-batt-capacity').val() + "&age=" + $('#tb-batt-age').val() + "&numcycles=" + $('#tb-batt-num-cycles').val()
+               data: srcAddrField + 'action=setage&capacity=' + $('#tb-batt-capacity').val() + "&age=" + $('#tb-batt-age').val() + "&numcycles=" + $('#tb-batt-num-cycles').val()
             });
 
          });
@@ -481,7 +491,7 @@
             $.ajax({
                url: 'bfg.cgi',
                type: 'POST',
-               data: 'action=resetbfg&password=' + $('#tb-reset-password').val()
+               data: srcAddrField + 'action=resetbfg&password=' + $('#tb-reset-password').val()
             });
 
          });
@@ -502,7 +512,7 @@
             $.ajax({
                url: 'bfg.cgi',
                type: 'POST',
-               data: 'action=setdisp&inverted=0'
+               data: srcAddrField + 'action=setdisp&inverted=0'
             });
          });
 
@@ -510,7 +520,7 @@
             $.ajax({
                url: 'bfg.cgi',
                type: 'POST',
-               data: 'action=setdisp&inverted=1'
+               data: srcAddrField + 'action=setdisp&inverted=1'
             });
          });
 
@@ -531,7 +541,7 @@
             $.ajax({
                url: 'bfg.cgi',
                type: 'POST',
-               data: 'action=setname&name=' + $('#tb-nickname').val()
+               data: srcAddrField + 'action=setname&name=' + $('#tb-nickname').val()
             });
 
          });
@@ -552,7 +562,7 @@
             $.ajax({
                url: 'bfg.cgi',
                type: 'POST',
-               data: 'action=setmfg&mfg=' + $('#cb-manufacturer').val()
+               data: srcAddrField + 'action=setmfg&mfg=' + $('#cb-manufacturer').val()
             });
 
          });
@@ -584,6 +594,7 @@
             $.ajax({
                url: 'bfg_state.json', // Replace with your actual server URL
                type: 'GET',
+               data: srcAddrField,
                dataType: 'json',
                success: function (response,textStatus, jqXHR) {
                   // Save off the raw response from the roboRIO

@@ -28,31 +28,31 @@ typedef enum BattFuelGauge_BattMfg_e
 class BattFuelGauge_Stats
 {
    public:
-      double minVoltage_V;
-      double maxVoltage_V;
-      double minCurrent_A;
-      double maxCurrent_A;
-      double startingVoltage_V;
-      double rmsDischargeCurrent_A;
-      double minDOD_Ah;
-      double maxDOD_Ah;
-      uint32_t chargeTime_s;
-      uint32_t dischargeTime_s;
+      double minVoltage_V = 0;
+      double maxVoltage_V = 0;
+      double minCurrent_A = 0;
+      double maxCurrent_A = 0;
+      double startingVoltage_V = 0;
+      double rmsDischargeCurrent_A = 0;
+      double minDOD_Ah = 0;
+      double maxDOD_Ah = 0;
+      uint32_t chargeTime_s = 0;
+      uint32_t dischargeTime_s = 0;
 };
 
 class BattFuelGauge_CycleStats : public BattFuelGauge_Stats
 {
    public:
-      double minDOD_Wh;
-      double maxDOD_Wh;
+      double minDOD_Wh = 0;
+      double maxDOD_Wh = 0;
 };
 
 class BattFuelGauge_MatchStats : public BattFuelGauge_Stats
 {
    public:
-      uint32_t activeTime_s;
-      double startDOD_Ah;
-      double startDOD_Wh;
-      double endDOD_Ah;
-      double endDOD_Wh;
+      uint32_t activeTime_s = 0;
+      double startDOD_Ah = 0;
+      double startDOD_Wh = 0;
+      double endDOD_Ah = 0;
+      double endDOD_Wh = 0;
 };
